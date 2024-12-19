@@ -50,11 +50,11 @@ export default function MainScreen() {
   };
 
   if (loading) {
-    return <div style={styles.loading}>Загрузка...</div>; // Индикатор загрузки
+    return <div style={styles.loading}>Yüklənir...</div>; // Индикатор загрузки
   }
 
   if (error) {
-    return <div style={styles.error}>Ошибка: {error}</div>; // Отображаем ошибку
+    return <div style={styles.error}>Xəta: {error}</div>; // Отображаем ошибку
   }
 
   return (
@@ -66,7 +66,7 @@ export default function MainScreen() {
           alt="Logo"
           style={styles.logo}
         />
-        <button onClick={handleAddStudent} style={styles.addButton}>Add Student</button>
+        <button onClick={handleAddStudent} style={styles.addButton}>Tələbə əlavə et</button>
       </header>
       <table style={styles.table}>
         <thead>
@@ -89,7 +89,7 @@ export default function MainScreen() {
               ))}
               <td style={styles.cell}>
                 <Link to={`/students/${user._id}`}>
-                  <button style={styles.viewButton}>View Details</button>
+                  <button style={styles.viewButton}>Ətraflı</button>
                 </Link>
               </td>
             </tr>

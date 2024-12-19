@@ -94,10 +94,10 @@ const EditStudent = () => {
 
     return (
         <div style={styles.container}>
-            <h2>Edit Student</h2>
+            <h2>Tələbəni redaktə et</h2>
             <form onSubmit={handleSubmit} style={styles.form}>
                 <div style={styles.formGroup}>
-                    <label htmlFor="name">Name</label>
+                    <label htmlFor="name">Ad</label>
                     <input
                         type="text"
                         name="name"
@@ -108,7 +108,7 @@ const EditStudent = () => {
                     />
                 </div>
                 <div style={styles.formGroup}>
-                    <label htmlFor="surname">Surname</label>
+                    <label htmlFor="surname">Soyad</label>
                     <input
                         type="text"
                         name="surname"
@@ -119,7 +119,7 @@ const EditStudent = () => {
                     />
                 </div>
                 <div style={styles.formGroup}>
-                    <label htmlFor="parentName">Parent's Name</label>
+                    <label htmlFor="parentName">Valideyn Adı</label>
                     <input
                         type="text"
                         name="parentName"
@@ -130,7 +130,7 @@ const EditStudent = () => {
                     />
                 </div>
                 <div style={styles.formGroup}>
-                    <label htmlFor="study">Study</label>
+                    <label htmlFor="study">Institut</label>
                     <input
                         type="text"
                         name="study"
@@ -141,7 +141,7 @@ const EditStudent = () => {
                     />
                 </div>
                 <div style={styles.formGroup}>
-                    <label htmlFor="prof">Profession</label>
+                    <label htmlFor="prof">Fakulte</label>
                     <input
                         type="text"
                         name="prof"
@@ -152,7 +152,7 @@ const EditStudent = () => {
                     />
                 </div>
                 <div style={styles.formGroup}>
-                    <label htmlFor="year">Year</label>
+                    <label htmlFor="year">İl</label>
                     <input
                         type="number"
                         name="year"
@@ -163,7 +163,7 @@ const EditStudent = () => {
                     />
                 </div>
                 <div style={styles.formGroup}>
-                    <label htmlFor="serviceCost">Service Cost</label>
+                    <label htmlFor="serviceCost">Xidmət haqqi</label>
                     <input
                         type="number"
                         name="serviceCost"
@@ -174,7 +174,7 @@ const EditStudent = () => {
                     />
                 </div>
                 <div style={styles.formGroup}>
-                    <label htmlFor="servicePayed">Service Payed</label>
+                    <label htmlFor="servicePayed">Xidmət haqqi Ödənilmişdir</label>
                     <input
                         type="number"
                         name="servicePayed"
@@ -185,7 +185,7 @@ const EditStudent = () => {
                     />
                 </div>
                 <div style={styles.formGroup}>
-                    <label htmlFor="annualCost">Annual Cost</label>
+                    <label htmlFor="annualCost">İllik haqqı</label>
                     <input
                         type="number"
                         name="annualCost"
@@ -196,7 +196,7 @@ const EditStudent = () => {
                     />
                 </div>
                 <div style={styles.formGroup}>
-                    <label htmlFor="annualPayed">Annual Payed</label>
+                    <label htmlFor="annualPayed">İllik haqqı Ödənilmişdir</label>
                     <input
                         type="number"
                         name="annualPayed"

@@ -42,7 +42,7 @@ const StudentDetail = () => {
     }
 
     if (!student) {
-        return <div>Loading...</div>;
+        return <div>Yüklənir...</div>;
     }
 
     const handleEditClick = () => {
@@ -51,21 +51,21 @@ const StudentDetail = () => {
 
     return (
         <div style={styles.container}>
-            <button onClick={handleBackClick} style={styles.backButton}>← Back</button>
-            <h2>Student Details</h2>
+            <button onClick={handleBackClick} style={styles.backButton}>← Geri</button>
+            <h2>Tələbə haqqında</h2>
             <div style={styles.detail}>
-                <p><strong>Name:</strong> {student.name}</p>
-                <p><strong>Surname:</strong> {student.surname}</p>
-                <p><strong>Parent's Name:</strong> {student.parentName}</p>
-                <p><strong>Study:</strong> {student.study}</p>
-                <p><strong>Profession:</strong> {student.prof}</p>
+                <p><strong>Ad:</strong> {student.name}</p>
+                <p><strong>Soyad:</strong> {student.surname}</p>
+                <p><strong>Valideyn Adı:</strong> {student.parentName}</p>
+                <p><strong>Institut:</strong> {student.study}</p>
+                <p><strong>Fakulte:</strong> {student.prof}</p>
                 <p><strong>Mobile:</strong> {student.mobile}</p>
-                <p><strong>Parent mobile:</strong> {student.parentMobile}</p>
-                <p><strong>Service Cost:</strong> {student.serviceCost}</p>
-                <p><strong>Service Paid:</strong> {student.servicePayed}</p>
-                <p><strong>Year:</strong> {student.year}</p>
-                <p><strong>Annual Cost:</strong> {student.annualCost}</p> {/* Отображаем годовую оплату */}
-                <p><strong>Annual Payed:</strong> {student.annualPayed}</p> {/* Отображаем годовую оплату */}
+                <p><strong>Valideyn nömrəsi:</strong> {student.parentMobile}</p>
+                <p><strong>Xidmət haqqi:</strong> {student.serviceCost}</p>
+                <p><strong>Xidmət haqqi Ödənilmişdir:</strong> {student.servicePayed}</p>
+                <p><strong>İl:</strong> {student.year}</p>
+                <p><strong>İllik haqqı:</strong> {student.annualCost}</p> {/* Отображаем годовую оплату */}
+                <p><strong>İllik haqqı Ödənilmişdir:</strong> {student.annualPayed}</p> {/* Отображаем годовую оплату */}
                 {student.passport && <p><strong>Passport:</strong> <a href={`https://api.nf-edu.com/${student.passport}`} target="_blank" rel="noopener noreferrer">View Passport</a></p>}
                 {student.diplom && <p><strong>Diplom:</strong> <a href={`https://api.nf-edu.com/${student.diplom}`} target="_blank" rel="noopener noreferrer">View Diplom</a></p>}
                 {student.image && <p><strong>Image:</strong> <a href={`https://api.nf-edu.com/${student.image}`} target="_blank" rel="noopener noreferrer">View Image</a></p>}

@@ -9,12 +9,12 @@ export default function AddStudent() {
         mobile: '',
         parentMobile: '',
         prof: '',
-        payed: 0, // Оплаченная сумма
-        year: 2024, // Год обучения
-        annualCost: 0, // Стоимость обучения на год
-        servicePayed: 0, // Оплата при вступлении
-        serviceCost: 0, // Стоимость сервиса компании
-        annualPayed: 0, // Годовая оплата
+        payed: 0, 
+        year: 2024, 
+        annualCost: 0, 
+        servicePayed: 0, 
+        serviceCost: 0, 
+        annualPayed: 0, 
     });
 
     const [passportFile, setPassportFile] = useState(null);
@@ -103,12 +103,12 @@ export default function AddStudent() {
     return (
         <div style={styles.container}>
             <form onSubmit={handleSubmit} style={styles.form}>
-                <h2>Add Student</h2>
+                <h2>Tələbəni əlavə edin</h2>
                 {message && <p style={styles.message}>{message}</p>}
 
                 {/* Поля формы */}
                 <div style={styles.formGroup}>
-                    <label htmlFor="name">Name</label>
+                    <label htmlFor="name">Ad</label>
                     <input
                         type="text"
                         name="name"
@@ -120,7 +120,7 @@ export default function AddStudent() {
                     />
                 </div>
                 <div style={styles.formGroup}>
-                    <label htmlFor="surname">Surname</label>
+                    <label htmlFor="surname">Soyad</label>
                     <input
                         type="text"
                         name="surname"
@@ -132,7 +132,7 @@ export default function AddStudent() {
                     />
                 </div>
                 <div style={styles.formGroup}>
-                    <label htmlFor="parentName">Parent's Name</label>
+                    <label htmlFor="parentName">Valideyn Adı</label>
                     <input
                         type="text"
                         name="parentName"
@@ -144,7 +144,7 @@ export default function AddStudent() {
                     />
                 </div>
                 <div style={styles.formGroup}>
-                    <label htmlFor="study">Study</label>
+                    <label htmlFor="study">Institut</label>
                     <input
                         type="text"
                         name="study"
@@ -156,7 +156,7 @@ export default function AddStudent() {
                     />
                 </div>
                 <div style={styles.formGroup}>
-                    <label htmlFor="prof">Profession</label>
+                    <label htmlFor="prof">Fakulte</label>
                     <input
                         type="text"
                         name="prof"
@@ -168,7 +168,7 @@ export default function AddStudent() {
                     />
                 </div>
                 <div style={styles.formGroup}>
-                    <label htmlFor="annualCost">Annual Cost</label>
+                    <label htmlFor="annualCost">İllik haqqı</label>
                     <input
                         type="number"
                         name="annualCost"
@@ -180,7 +180,7 @@ export default function AddStudent() {
                     />
                 </div>
                 <div style={styles.formGroup}>
-                    <label htmlFor="annualPayed">Annual Payed</label>
+                    <label htmlFor="annualPayed">İllik haqqı Ödənilmişdir</label>
                     <input
                         type="number"
                         name="annualPayed"
@@ -192,7 +192,7 @@ export default function AddStudent() {
                     />
                 </div>
                 <div style={styles.formGroup}>
-                    <label htmlFor="serviceCost">Service Cost</label>
+                    <label htmlFor="serviceCost">Xidmət haqqi</label>
                     <input
                         type="number"
                         name="serviceCost"
@@ -204,7 +204,7 @@ export default function AddStudent() {
                     />
                 </div>
                 <div style={styles.formGroup}>
-                    <label htmlFor="servicePayed">Service Payed</label>
+                    <label htmlFor="servicePayed">Xidmət haqqi Ödənilmişdir</label>
                     <input
                         type="number"
                         name="servicePayed"
@@ -216,7 +216,7 @@ export default function AddStudent() {
                     />
                 </div>
                 <div style={styles.formGroup}>
-                    <label htmlFor="year">Year</label>
+                    <label htmlFor="year">İl</label>
                     <input
                         type="number"
                         name="year"
@@ -240,7 +240,7 @@ export default function AddStudent() {
                     />
                 </div>
                 <div style={styles.formGroup}>
-                    <label htmlFor="parentMobile">Parent mobile</label>
+                    <label htmlFor="parentMobile">Valideyn nömrəsi</label>
                     <input
                         type="text"
                         name="parentMobile"
@@ -282,7 +282,7 @@ export default function AddStudent() {
                     />
                 </div>
 
-                <button type="submit" style={styles.button}>Add Student</button>
+                <button type="submit" style={styles.button}>Tələbəni əlavə et</button>
             </form>
         </div>
     );
