@@ -15,7 +15,7 @@ const Login = ({ onLogin }) => {
         }
 
         try {
-            const response = await fetch('https://185.230.64.36:3000/login', {
+            const response = await fetch('https://api.nf-edu.com/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

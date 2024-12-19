@@ -16,7 +16,7 @@ const EditStudent = () => {
         const fetchStudent = async () => {
             const token = localStorage.getItem('token');
             try {
-                const response = await fetch(`https://185.230.64.36:3000/students/${studentId}`, {
+                const response = await fetch(`https://api.nf-edu.com/students/${studentId}`, {
                     method: 'GET',
                     headers: {
                         'Authorization': `Bearer ${token}`,
@@ -63,7 +63,7 @@ const EditStudent = () => {
         }
 
         try {
-            const response = await fetch(`https://185.230.64.36:3000/students/${studentId}`, {
+            const response = await fetch(`https://api.nf-edu.com/students/${studentId}`, {
                 method: 'PUT',
                 headers: {
                     'Authorization': `Bearer ${token}`,
