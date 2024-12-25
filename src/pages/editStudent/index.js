@@ -91,8 +91,13 @@ const EditStudent = () => {
         return <div>Loading...</div>;
     }
 
+    const handleBackClick = () => {
+        navigate('/main'); // Возвращаемся на предыдущую страницу
+    };
+
     return (
         <div style={styles.container}>
+            <button onClick={handleBackClick} style={styles.backButton}>← Geri</button>
             <h2>Tələbəni redaktə et</h2>
             <form onSubmit={handleSubmit} style={styles.form}>
                 <div style={styles.formGroup}>
@@ -279,6 +284,17 @@ const styles = {
     },
     formGroup: {
         marginBottom: '15px',
+    },
+    backButton: {
+        position: 'absolute',
+        top: '10px',
+        left: '10px',
+        padding: '5px 10px',
+        backgroundColor: '#007BFF',
+        color: '#fff',
+        border: 'none',
+        borderRadius: '5px',
+        cursor: 'pointer',
     },
     input: {
         padding: '10px',
