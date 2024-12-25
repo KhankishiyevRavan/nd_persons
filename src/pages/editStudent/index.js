@@ -51,7 +51,6 @@ const EditStudent = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const token = localStorage.getItem('token');
-
         const formData = new FormData();
         for (const key in student) {
             formData.append(key, student[key]);
@@ -139,6 +138,47 @@ const EditStudent = () => {
                         required
                         style={styles.input}
                     />
+                </div>
+                <div style={styles.formGroup}>
+                    <label htmlFor="isSessionOpen">Sessia </label>
+                    <select
+                        type="text"
+                        name="isSessionOpen"
+                        id="isSessionOpen"
+                        value={student.isSessionOpen}
+                        onChange={handleChange}
+                        style={styles.input}
+                        required>
+                        <option value="true">Achig</option>
+                        <option value="false">Bagli</option>
+                    </select>
+                </div>
+                <div style={styles.formGroup}>
+                    <label htmlFor="isNastrfication">Nastrikaciya olunub</label>
+                    <select
+                        type="text"
+                        name="isNastrfication"
+                        id="isNastrfication"
+                        value={student.isNastrfication}
+                        onChange={handleChange}
+                        style={styles.input}
+                        required>
+                        <option value="true">Olunub</option>
+                        <option value="false">Olunmayib</option>
+                    </select>
+                </div>
+                <div style={styles.formGroup}>
+                    <label htmlFor="isNastrficationPayed">Nastrikaciya odenilib</label>
+                    <select
+                        name="isNastrficationPayed"
+                        id="isNastrficationPayed"
+                        value={student.isNastrficationPayed}
+                        onChange={handleChange}
+                        style={styles.input}
+                        required>
+                        <option value="true">Odenilib</option>
+                        <option value="false">Odenilmeyib</option>
+                    </select>
                 </div>
                 <div style={styles.formGroup}>
                     <label htmlFor="prof">Fakulte</label>

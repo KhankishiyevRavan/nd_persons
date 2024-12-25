@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function AddStudent() {
     const [student, setStudent] = useState({
@@ -9,18 +10,21 @@ export default function AddStudent() {
         mobile: '',
         parentMobile: '',
         prof: '',
-        payed: 0, 
-        year: 2024, 
-        annualCost: 0, 
-        servicePayed: 0, 
-        serviceCost: 0, 
-        annualPayed: 0, 
+        isSessionOpen: true,
+        isNastrficationPayed: false,
+        isNastrfication: false,
+        year: 2024,
+        annualCost: 0,
+        servicePayed: 0,
+        serviceCost: 0,
+        annualPayed: 0,
     });
 
     const [passportFile, setPassportFile] = useState(null);
     const [imageFile, setImageFile] = useState(null);
     const [diplomFile, setDiplomFile] = useState(null);
     const [message, setMessage] = useState('');
+    const navigate = useNavigate();
 
     const currentYear = new Date().getFullYear(); // Получаем текущий год
 
@@ -30,6 +34,7 @@ export default function AddStudent() {
         if (student.year === currentYear) {
             setStudent({
                 ...student,
+                isSessionOpen: true,
                 annualCost: 0, // Стоимость обучения на год
                 servicePayed: 0, // Оплата при вступлении
                 serviceCost: 0, // Стоимость сервиса компании
@@ -55,8 +60,6 @@ export default function AddStudent() {
         Object.keys(student).forEach((key) => {
             formData.append(key, student[key]);
         });
-
-        // Добавляем файлы, если они были выбраны
         if (passportFile) formData.append('passport', passportFile);
         if (diplomFile) formData.append('diplom', diplomFile);
         if (imageFile) formData.append('image', imageFile);
@@ -68,7 +71,7 @@ export default function AddStudent() {
                     'Authorization': `Bearer ${token}`,
                 },
                 body: formData,
-            });
+            })
 
             if (response.ok) {
                 setMessage('Student added successfully');
@@ -78,6 +81,9 @@ export default function AddStudent() {
                     parentName: '',
                     study: '',
                     prof: '',
+                    isSessionOpen: true,
+                    isNastrficationPayed: false,
+                    isNastrfication: false,
                     payed: 0, // Задолженность обнуляется
                     year: currentYear, // Новый учебный год
                     mobile: '',
@@ -100,8 +106,13 @@ export default function AddStudent() {
         }
     };
 
+    const handleBackClick = () => {
+        navigate('/main'); // Возвращаемся на предыдущую страницу
+    };
+
     return (
         <div style={styles.container}>
+            <button onClick={handleBackClick} style={styles.backButton}>← Geri</button>
             <form onSubmit={handleSubmit} style={styles.form}>
                 <h2>Tələbəni əlavə edin</h2>
                 {message && <p style={styles.message}>{message}</p>}
@@ -166,6 +177,47 @@ export default function AddStudent() {
                         style={styles.input}
                         required
                     />
+                </div>
+                <div style={styles.formGroup}>
+                    <label htmlFor="isSessionOpen">Sessia </label>
+                    <select
+                        type="text"
+                        name="isSessionOpen"
+                        id="isSessionOpen"
+                        value={student.isSessionOpen}
+                        onChange={handleChange}
+                        style={styles.input}
+                        required>
+                        <option value="true">Achig</option>
+                        <option value="false">Bagli</option>
+                    </select>
+                </div>
+                <div style={styles.formGroup}>
+                    <label htmlFor="isNastrfication">Nastrikaciya olunub</label>
+                    <select
+                        type="text"
+                        name="isNastrfication"
+                        id="isNastrfication"
+                        value={student.isNastrfication}
+                        onChange={handleChange}
+                        style={styles.input}
+                        required>
+                        <option value="true">Olunub</option>
+                        <option value="false">Olunmayib</option>
+                    </select>
+                </div>
+                <div style={styles.formGroup}>
+                    <label htmlFor="isNastrficationPayed">Nastrikaciya odenilib</label>
+                    <select
+                        name="isNastrficationPayed"
+                        id="isNastrficationPayed"
+                        value={student.isNastrficationPayed}
+                        onChange={handleChange}
+                        style={styles.input}
+                        required>
+                        <option value="true">Odenilib</option>
+                        <option value="false">Odenilmeyib</option>
+                    </select>
                 </div>
                 <div style={styles.formGroup}>
                     <label htmlFor="annualCost">İllik haqqı</label>
@@ -302,6 +354,17 @@ const styles = {
         boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
         width: '400px',
         textAlign: 'center',
+    },
+    backButton: {
+        position: 'absolute',
+        top: '10px',
+        left: '10px',
+        padding: '5px 10px',
+        backgroundColor: '#007BFF',
+        color: '#fff',
+        border: 'none',
+        borderRadius: '5px',
+        cursor: 'pointer',
     },
     formGroup: {
         marginBottom: '15px',

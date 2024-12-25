@@ -46,7 +46,8 @@ export default function MainScreen() {
 
   // Функция для проверки задолженности
   const hasDebt = (student) => {
-    return student.servicePayed < student.serviceCost || student.annualCost > student.annuaPayed;
+    const result = student.servicePayed < student.serviceCost || student.annualCost > student.annualPayed;
+    return result;
   };
 
   if (loading) {

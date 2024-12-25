@@ -58,17 +58,20 @@ const StudentDetail = () => {
                 <p><strong>Soyad:</strong> {student.surname}</p>
                 <p><strong>Valideyn Adı:</strong> {student.parentName}</p>
                 <p><strong>Institut:</strong> {student.study}</p>
+                <p><strong>Sessia:</strong> {student.isSessionOpen ? 'Achig' : 'Bagli'}</p>
+                <p><strong>Nastrikaciya olunub:</strong> {student.isNastrfication ? 'Olunub' : 'Olunmayib'}</p>
+                <p><strong>Nastrikaciya odenilib:</strong> {student.isNastrficationPayed ? 'Odenilib' : 'Odenilmeyib'}</p>
                 <p><strong>Fakulte:</strong> {student.prof}</p>
                 <p><strong>Mobile:</strong> {student.mobile}</p>
                 <p><strong>Valideyn nömrəsi:</strong> {student.parentMobile}</p>
                 <p><strong>Xidmət haqqi:</strong> {student.serviceCost}</p>
                 <p><strong>Xidmət haqqi Ödənilmişdir:</strong> {student.servicePayed}</p>
                 <p><strong>İl:</strong> {student.year}</p>
-                <p><strong>İllik haqqı:</strong> {student.annualCost}</p> {/* Отображаем годовую оплату */}
-                <p><strong>İllik haqqı Ödənilmişdir:</strong> {student.annualPayed}</p> {/* Отображаем годовую оплату */}
-                {student.passport && <p><strong>Passport:</strong> <a href={`https://api.nf-edu.com/${student.passport}`} target="_blank" rel="noopener noreferrer">View Passport</a></p>}
-                {student.diplom && <p><strong>Diplom:</strong> <a href={`https://api.nf-edu.com/${student.diplom}`} target="_blank" rel="noopener noreferrer">View Diplom</a></p>}
-                {student.image && <p><strong>Image:</strong> <a href={`https://api.nf-edu.com/${student.image}`} target="_blank" rel="noopener noreferrer">View Image</a></p>}
+                <p><strong>İllik haqqı:</strong> {student.annualCost}</p>
+                <p><strong>İllik haqqı Ödənilmişdir:</strong> {student.annualPayed}</p>
+                {student.passport && <p><strong>Passport:</strong> <a href={`http://localhost:3000/${student.passport}`} target="_blank" rel="noopener noreferrer">View Passport</a></p>}
+                {student.diplom && <p><strong>Diplom:</strong> <a href={`http://localhost:3000/${student.diplom}`} target="_blank" rel="noopener noreferrer">View Diplom</a></p>}
+                {student.image && <p><strong>Image:</strong> <a href={`http://localhost:3000/${student.image}`} target="_blank" rel="noopener noreferrer">View Image</a></p>}
             </div>
             <button onClick={handleEditClick} style={styles.button}>Edit Student</button>
         </div>
