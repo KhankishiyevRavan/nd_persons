@@ -15,7 +15,7 @@ function App() {
   };
 
   return (
-    <Router>
+    <Router basename="/nd_persons">
       <Routes>
         <Route path="/login" element={isAuthenticated ? <Navigate to="/main" /> : <Login onLogin={handleLogin} />} />
         <Route path="/students/:id" element={isAuthenticated ? <StudentDetail /> : <Navigate to="/login" />} />
